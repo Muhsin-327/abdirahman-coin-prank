@@ -1,0 +1,41 @@
+function sendGift() {
+  const user = document.getElementById("targetUser").value.trim();
+  const result = document.getElementById("resultBox");
+  const coinBox = document.getElementById("coinCount");
+  const coinNumber = document.getElementById("coinNumber");
+  const coinSound = document.getElementById("coinSound");
+  const laughSound = document.getElementById("laughSound");
+
+  if (!user) {
+    alert("Please enter a TikTok username.");
+    return;
+  }
+
+  result.innerHTML = `
+    🎉 Congratulations <strong>@${user}</strong>!<br>
+    You’ve received a <strong>Galaxy 🌌</strong>, <strong>5 Roses 🌹</strong>, and a <strong>Lion 🦁</strong><br><br>
+    <em>Sent by @abdirahman.hc</em><br><br>
+    <button onclick="claimGift()">Claim Gift</button>
+  `;
+
+  result.classList.remove("hidden");
+  coinBox.classList.remove("hidden");
+
+  let count = 0;
+  let target = 500000;
+  let step = 2500;
+
+  const interval = setInterval(() => {
+    count += step;
+    coinNumber.textContent = count.toLocaleString();
+    if (count >= target) clearInterval(interval);
+  }, 30);
+
+  coinSound.play();
+}
+
+function claimGift() {
+  const laughSound = document.getElementById("laughSound");
+  laughSound.play();
+  alert("😂 You’ve been pranked by Abdirahman!");
+}

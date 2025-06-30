@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake TikTok Gift Sender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="coinSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  <audio id="laughSound" src="https://www.soundjay.com/human/laugh-1.mp3" preload="auto"></audio>
+
+  <div class="container">
+    <h1>🎁 Fake TikTok Gift Sender</h1>
+    <p>From: <strong>@abdirahman.hc</strong></p>
+    <input type="text" id="targetUser" placeholder="Enter TikTok username">
+    <button onclick="sendGift()">Send Fake Gift</button>
+    <div id="resultBox" class="hidden"></div>
+    <div id="coinCount" class="hidden">Coins received: <span id="coinNumber">0</span></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
